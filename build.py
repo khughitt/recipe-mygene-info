@@ -2,10 +2,14 @@
 """
 mygene.info gene metadata (human)
 """
+import os
 import time
 import numpy as np
 import pandas as pd
 from biothings_client import get_client, MyGeneInfo
+
+if not os.path.exists("output"):
+    os.makedirs("output", mode=0o755)
 
 batch_size = 100
 sleep_time = 3
